@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/home_title_background"
         android:layout_width="match_parent"
@@ -82,6 +81,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginHorizontal="60dp"
+        android:inputType="text"
+        android:maxLength="25"
         android:padding="20dp"
         android:hint="@string/textfield_placeholder_name"
         android:background="@android:drawable/dialog_holo_light_frame"

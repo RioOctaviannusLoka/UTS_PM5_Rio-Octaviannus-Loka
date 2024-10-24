@@ -37,6 +37,10 @@
         <item name="android:textColorHint">@color/darker_grey</item>
         <item name="fontFamily">@font/poppins_medium</item>
     </style>
+
+    <style name="question_bg">
+        <item name="android:background">@color/white</item>
+    </style>
     
     <style name="primaryButton">
         <item name="cornerRadius">87dp</item>
@@ -52,31 +56,31 @@
     </style>
 
     <style name="primaryButton.answers">
-        <item name="cornerRadius">23dp</item>
+        <item name="cornerRadius">10dp</item>
         <item name="android:textSize">17sp</item>
     </style>
 
     <style name="primaryButton.answers2">
-        <item name="cornerRadius">23dp</item>
+        <item name="cornerRadius">10dp</item>
         <item name="android:textSize">15sp</item>
     </style>
 
     <style name="primaryButton.correctAnswers">
-        <item name="cornerRadius">23dp</item>
+        <item name="cornerRadius">10dp</item>
         <item name="android:textSize">17sp</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:backgroundTint">@color/green</item>
     </style>
 
     <style name="primaryButton.correctAnswers2">
-        <item name="cornerRadius">23dp</item>
+        <item name="cornerRadius">10dp</item>
         <item name="android:textSize">15sp</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:backgroundTint">@color/green</item>
     </style>
     
     <style name="secondaryButton">
-        <item name="cornerRadius">23dp</item>
+        <item name="cornerRadius">10dp</item>
         <item name="android:textSize">17sp</item>
         <item name="android:backgroundTint">@color/tertiary</item>
         <item name="android:padding">8dp</item>
