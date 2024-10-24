@@ -1,3 +1,29 @@
 <resources>
-    <string name="app_name">UTS</string>
+    <string name="app_name">Quizku</string>
+    <string name="home_page_title">Home</string>
+    <string name="welcome_message">Welcome Back,</string>
+    <string name="textfield_placeholder_name">Enter Your Name…</string>
+    <string name="button_start">Start The Quiz</string>
+    <string name="button_study_materials">Study Materials</string>
+    <string name="quiz_page_title">Quiz</string>
+    <string name="text_first_question">What is the main function of Intent in Android app development?</string>
+    <string name="text_first_question_answer1">Notification</string>
+    <string name="text_first_question_answer2">Component Communication</string>
+    <string name="text_first_question_answer3">Data Storage</string>
+    <string name="text_first_question_answer4">Network Access</string>
+    <string name="button_continue">Continue</string>
+    <string name="text_second_question">What is the function of the Intent Filter?</string>
+    <string name="text_second_question_answer1">Processing Data</string>
+    <string name="text_second_question_answer2">Filtering Intent</string>
+    <string name="text_second_question_answer3">Specifying A Handler</string>
+    <string name="text_second_question_answer4">Running The Service</string>
+    <string name="text_third_question">What type of Intent does not specify a specific component?</string>
+    <string name="text_third_question_answer1">Explicit Intent</string>
+    <string name="text_third_question_answer2">Implicit Intent</string>
+    <string name="text_third_question_answer3">Local Intent</string>
+    <string name="text_third_question_answer4">Remote Intent</string>
+    <string name="result_page_title">Result</string>
+    <string name="result_message"> have completed the Quiz</string>
+    <string name="button_reattempt">Reattempt The Quiz</string>
+    <string name="button_view_answers">View Answers</string>
 </resources>
