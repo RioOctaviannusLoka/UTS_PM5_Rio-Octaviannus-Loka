@@ -6,6 +6,7 @@
     </style>
     
     <style name="page_title">
+        <item name="android:backgroundTint">@color/primary</item>
         <item name="android:textSize">75sp</item>
         <item name="android:textColor">@color/white</item>
         <item name="fontFamily">@font/poppins_medium</item>
