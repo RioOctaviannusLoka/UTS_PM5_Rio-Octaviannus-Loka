@@ -26,4 +26,5 @@
     <string name="result_message"> have completed the Quiz</string>
     <string name="button_reattempt">Reattempt The Quiz</string>
     <string name="button_view_answers">View Answers</string>
+    <string name="view_answers_page_title">Answers</string>
 </resources>
