@@ -5,8 +5,6 @@ import android.net.Uri
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.uts.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -33,7 +31,7 @@ private lateinit var binding: ActivityMainBinding
         }
 
         binding.buttonStudyMaterials.setOnClickListener(){
-            var uri = "https://developer.android.com/guide/components/intents-filters"
+            val uri = "https://developer.android.com/guide/components/intents-filters"
             val intent = Intent(Intent.ACTION_VIEW)
             intent.data = Uri.parse(uri)
             startActivity(intent)
