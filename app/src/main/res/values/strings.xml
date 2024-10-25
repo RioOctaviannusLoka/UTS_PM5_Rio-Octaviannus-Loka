@@ -5,6 +5,7 @@
     <string name="textfield_placeholder_name">Enter Your Name…</string>
     <string name="button_start">Start The Quiz</string>
     <string name="button_study_materials">Study Materials</string>
+
     <string name="quiz_page_title">Quiz</string>
     <string name="text_first_question">What is the main function of Intent in Android app development?</string>
     <string name="text_first_question_answer1">Notification</string>
@@ -12,19 +13,38 @@
     <string name="text_first_question_answer3">Data Storage</string>
     <string name="text_first_question_answer4">Network Access</string>
     <string name="button_continue">Continue</string>
-    <string name="text_second_question">What is the function of the Intent Filter?</string>
-    <string name="text_second_question_answer1">Processing Data</string>
-    <string name="text_second_question_answer2">Filtering Intent</string>
-    <string name="text_second_question_answer3">Specifying A Handler</string>
-    <string name="text_second_question_answer4">Running The Service</string>
-    <string name="text_third_question">What type of Intent does not specify a specific component?</string>
-    <string name="text_third_question_answer1">Explicit Intent</string>
-    <string name="text_third_question_answer2">Implicit Intent</string>
-    <string name="text_third_question_answer3">Local Intent</string>
-    <string name="text_third_question_answer4">Remote Intent</string>
+
     <string name="result_page_title">Result</string>
     <string name="result_message"> have completed the Quiz</string>
     <string name="button_reattempt">Reattempt The Quiz</string>
+
     <string name="button_view_answers">View Answers</string>
     <string name="view_answers_page_title">Answers</string>
+
+    <string-array name="questions">
+        <item>What is the main function of Intent in Android app development?</item>
+        <item>What is the function of the Intent Filter?</item>
+        <item>What type of Intent does not specify a specific component?</item>
+    </string-array>
+    
+    <string-array name="question1_options">
+        <item>Notification</item>
+        <item>Component Communication</item>
+        <item>Data Storage</item>
+        <item>Network Access</item>
+    </string-array>
+
+    <string-array name="question2_options">
+        <item>Processing Data</item>
+        <item>Filtering Intent</item>
+        <item>Specifying A Handler</item>
+        <item>Running The Service</item>
+    </string-array>
+
+    <string-array name="question3_options">
+        <item>Explicit Intent</item>
+        <item>Implicit Intent</item>
+        <item>Local Intent</item>
+        <item>Remote Intent</item>
+    </string-array>
 </resources>

@@ -20,7 +20,7 @@ private lateinit var binding: ActivityMainBinding
 
         binding.buttonStart.setOnClickListener(){
             if(binding.nameEditText.text.isNotEmpty()){
-                val name =binding.nameEditText.text.toString()
+                val name = binding.nameEditText.text.toString()
                 val intent = Intent(this, QuizActivity::class.java).apply {
                     putExtra("name", name)
                 }
