@@ -2,6 +2,7 @@ package com.example.uts
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -19,6 +20,51 @@ class QuizActivity : AppCompatActivity() {
     private var currentQuestionIndex = 0
     private var correctAnswers = intArrayOf(1, 2, 1)
     private var userHasSelected = false
+    private var wrongIconIndex = 0
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        // Save important state to the Bundle
+        outState.putInt("currentQuestionIndex", currentQuestionIndex)
+        outState.putBoolean("userHasSelected", userHasSelected)
+        outState.putIntArray("correctAnswers", correctAnswers)
+        outState.putBoolean("isCorrectVisible", binding.correct.visibility == View.VISIBLE)
+        outState.putBoolean("isWrongVisible", binding.wrong.visibility == View.VISIBLE)
+        outState.putBoolean("isContinueVisible", binding.buttonContinue.visibility == View.VISIBLE)
+
+        // Save wrong answer index
+        outState.putInt("selectedIndex", if (binding.wrong.visibility == View.VISIBLE) wrongIconIndex else -1)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        // Restore state from Bundle
+        currentQuestionIndex = savedInstanceState.getInt("currentQuestionIndex", 0)
+        userHasSelected = savedInstanceState.getBoolean("userHasSelected", false)
+        correctAnswers = savedInstanceState.getIntArray("correctAnswers") ?: intArrayOf(1, 2, 1)
+
+        Log.d("QuizActivity", "onRestoreInstanceState: currentQuestionIndex = $currentQuestionIndex")
+
+        displayQuestion(isRestore = true)
+
+        val correctVisible = savedInstanceState.getBoolean("isCorrectVisible", false)
+        val wrongVisible = savedInstanceState.getBoolean("isWrongVisible", false)
+        val selectedIndex = savedInstanceState.getInt("selectedIndex", -1)
+
+        if (correctVisible) {
+            moveIcon(binding.correct, correctAnswers[currentQuestionIndex])
+        }
+
+        if (wrongVisible && selectedIndex != -1) {
+            moveIcon(binding.wrong, selectedIndex)
+        }
+
+        if (savedInstanceState.getBoolean("isContinueVisible", false)) {
+            binding.buttonContinue.visibility = View.VISIBLE
+        }
+
+        if (userHasSelected) enableOptions(false)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,7 +90,7 @@ class QuizActivity : AppCompatActivity() {
         displayQuestion()
     }
 
-    private fun  setupOptionListeners() {
+    private fun setupOptionListeners() {
         binding.buttonOption1.setOnClickListener{ onOptionSelected(0) }
         binding.buttonOption2.setOnClickListener{ onOptionSelected(1) }
         binding.buttonOption3.setOnClickListener{ onOptionSelected(2) }
@@ -57,7 +103,7 @@ class QuizActivity : AppCompatActivity() {
         if (currentQuestionIndex < questions.size) {
             displayQuestion()
         } else{
-            var name = intent.getStringExtra("name").toString()
+            val name = intent.getStringExtra("name").toString()
             val intent = Intent(this, ResultActivity::class.java).apply {
                 putExtra("name", name)
             }
@@ -65,24 +111,24 @@ class QuizActivity : AppCompatActivity() {
         }
     }
 
-    private fun displayQuestion() {
-        // Update the question and the options
+    private fun displayQuestion(isRestore: Boolean = false) {
+        // Update the question and options
         binding.question.text = questions[currentQuestionIndex]
         binding.buttonOption1.text = options[currentQuestionIndex][0]
         binding.buttonOption2.text = options[currentQuestionIndex][1]
         binding.buttonOption3.text = options[currentQuestionIndex][2]
         binding.buttonOption4.text = options[currentQuestionIndex][3]
 
-        // Reset visibility of continue button and correct icon
-        binding.buttonContinue.visibility = View.GONE
-        binding.correct.visibility = View.GONE
-        binding.wrong.visibility = View.GONE
+        if (!isRestore) {
+            // Reset only if not restoring state
+            enableOptions(true)
+            userHasSelected = false
 
-        // Enable options again for the next question
-        enableOptions(true)
-
-        // Reset user selection flag
-        userHasSelected = false
+            // Reset visibility of continue button and icons
+            binding.buttonContinue.visibility = View.GONE
+            binding.correct.visibility = View.GONE
+            binding.wrong.visibility = View.GONE
+        }
     }
 
     private fun onOptionSelected(selectedIndex: Int){
@@ -94,6 +140,8 @@ class QuizActivity : AppCompatActivity() {
         enableOptions(false)
 
         if (selectedIndex != correctAnswers[currentQuestionIndex]) {
+            wrongIconIndex = selectedIndex
+
             // Show the wrong icon next to the selected answer
             moveIcon(binding.wrong, selectedIndex)
         }
