@@ -117,12 +117,12 @@ class QuizActivity : AppCompatActivity() {
 
         // Move the icon to the left of the option button
         val set = ConstraintSet().apply {
-            clone(binding.activityQuiz) // Clone the layout
+            clone(binding.wrapper) // Clone the layout
             connect(iconView.id, ConstraintSet.END, button.id, ConstraintSet.START, 16)
             connect(iconView.id, ConstraintSet.TOP, button.id, ConstraintSet.TOP)
             connect(iconView.id, ConstraintSet.BOTTOM, button.id, ConstraintSet.BOTTOM)
         }
-        set.applyTo(binding.activityQuiz) // Apply the new constraints
+        set.applyTo(binding.wrapper) // Apply the new constraints
         iconView.visibility = View.VISIBLE // Show the icon
     }
 
