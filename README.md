@@ -19,7 +19,7 @@
 
 | Profile | Keterangan                 |
 |---------|----------------------------|
-| Nama    | Bagus Budi Satoto          |
+| Nama    | Rio Octaviannus Loka       |
 | NIM     | 221401032                  |
 | Lab     | 5                          |
 | Jurusan | S1 - Ilmu Komputer         |
