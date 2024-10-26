@@ -17,7 +17,7 @@ class ResultActivity : AppCompatActivity() {
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var name = intent.getStringExtra("name").toString() ?: "User"
+        val name = intent.getStringExtra("name").toString()
         val Message = getString(R.string.result_message)
         binding.question.text = "$name $Message"
 

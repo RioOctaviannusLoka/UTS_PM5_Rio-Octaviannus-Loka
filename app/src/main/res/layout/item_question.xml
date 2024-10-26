@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -42,6 +42,8 @@
         android:layout_marginTop="40dp"
         android:layout_marginHorizontal="40dp"
         android:padding="15dp"
+        android:clickable="false"
+        android:focusable="false"
         app:layout_constraintTop_toBottomOf="@id/question_background"
         app:layout_constraintStart_toStartOf="@id/question_background"
         app:layout_constraintEnd_toEndOf="@id/question_background" />
@@ -50,12 +52,14 @@
         android:id="@+id/button_option2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        style="@style/primaryButton.answers2"
+        style="@style/primaryButton.answers"
         android:text="@string/text_first_question_answer2"
         android:paddingStart="50dp"
         android:paddingEnd="50dp"
         android:layout_marginTop="20dp"
         android:padding="10dp"
+        android:clickable="false"
+        android:focusable="false"
         app:layout_constraintTop_toBottomOf="@id/button_option1"
         app:layout_constraintStart_toStartOf="@id/button_option1"
         app:layout_constraintEnd_toEndOf="@id/button_option1" />
@@ -70,6 +74,8 @@
         android:paddingEnd="50dp"
         android:layout_marginTop="20dp"
         android:padding="15dp"
+        android:clickable="false"
+        android:focusable="false"
         app:layout_constraintTop_toBottomOf="@id/button_option2"
         app:layout_constraintStart_toStartOf="@id/button_option2"
         app:layout_constraintEnd_toEndOf="@id/button_option2" />
@@ -84,6 +90,8 @@
         android:paddingEnd="50dp"
         android:layout_marginTop="20dp"
         android:padding="15dp"
+        android:clickable="false"
+        android:focusable="false"
         app:layout_constraintTop_toBottomOf="@id/button_option3"
         app:layout_constraintStart_toStartOf="@id/button_option3"
         app:layout_constraintEnd_toEndOf="@id/button_option3" />
