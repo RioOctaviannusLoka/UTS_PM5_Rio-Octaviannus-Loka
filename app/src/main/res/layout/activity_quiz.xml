@@ -85,7 +85,7 @@
         android:id="@+id/button_option2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        style="@style/primaryButton.answers2"
+        style="@style/primaryButton.answers"
         android:text="@string/text_first_question_answer2"
         android:paddingStart="50dp"
         android:paddingEnd="50dp"
